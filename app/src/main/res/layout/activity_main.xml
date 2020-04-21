@@ -7,6 +7,7 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!"
@@ -23,14 +24,14 @@
 
         <Button
             android:id="@+id/myNewBtn"
-            android:text="Tomten"
+            android:text="Push Me!"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <ListView
             android:id="@+id/my_listview"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_width="322dp"
+            android:layout_height="560dp">
 
 
         </ListView>
