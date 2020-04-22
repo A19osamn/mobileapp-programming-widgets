@@ -15,34 +15,32 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
-    private String[] mountainNames = {"Qalamun","Hermun","Qasioun"};
-    private String[] mountainLocations = {"Damascus","Damascus","Sham"};
-    private int[] mountainsHeights= {2466,2814,1151};
     private ArrayList<Mountain> mountainArrayList= new ArrayList<>();
-    private ArrayList<String> ListData=new ArrayList<>(Arrays.asList(mountainNames));
+
 
     @Override
-
-
     protected void onCreate(Bundle savedInstanceState) {
-
+        mountainArrayList.add(new Mountain("Qalamun","Damascus",2466));
+        mountainArrayList.add(new Mountain("Hermun","Damascus",2814));
+        mountainArrayList.add(new Mountain("Qasioun","Sham",1151));
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Button b = findViewById(R.id.myNewBtn);
 
         b.setOnClickListener(new View.OnClickListener() {
             @Override
+
             public void onClick(View view) {
                 Log.d("==>","We clicked on Tomten!");
             }
         });
-        ArrayAdapter<String> adapter=new ArrayAdapter<String>(this,R.layout.list_item_textview,R.id.list_item_textview_xml,ListData);
+        ArrayAdapter<Mountain> adapter=new ArrayAdapter<Mountain>(this,R.layout.list_item_textview,R.id.list_item_textview_xml,mountainArrayList);
         ListView my_listview=(ListView) findViewById(R.id.my_listview);
         my_listview.setAdapter(adapter);
         my_listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getApplicationContext(), "A Mountain In Syria , Damascus", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), mountainArrayList.get(position).info(),Toast.LENGTH_SHORT).show();
             }
         });
 

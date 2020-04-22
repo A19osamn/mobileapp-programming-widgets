@@ -17,8 +17,9 @@ public class Mountain {
     }
     public String info(){
         String tmp=new String();
-        tmp+=name+"is located in mountain range"+location+" and reaches " +height+"m above sea level.";
+        tmp+=name+"is located in mountain range "+location+" and reaches " +height+"m above sea level.";
         return tmp;
+
     }
     public void setName(String n){
         name=n;
@@ -27,5 +28,8 @@ public class Mountain {
         return name;
     }
 
-
+@Override
+    public String toString(){
+        return name;
+}
 }
